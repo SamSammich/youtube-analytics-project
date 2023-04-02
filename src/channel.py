@@ -16,6 +16,7 @@ class Channel:
         self.description = self.channel_info["items"][0]["snippet"]['description']
         self.url = "https://www.youtube.com/channel/" + f"{channel_id}"
         self.video_count = self.channel_info["items"][0]["statistics"]["videoCount"]
+        self.subsriber_count = self.channel_info["items"][0]["statistics"]["subscriberCount"]
 
     def print_info(self):
         """Выводит в консоль информацию о канале."""
@@ -34,7 +35,8 @@ class Channel:
                 "title:": self.title,
                 "description": self.description,
                 "url": self.url,
-                "video_count": self.video_count}
+                "video_count": self.video_count,
+                "subscriberCount": self.subsriber_count}
         data = json.dumps(data)
         my_file = open(f"{file_json}", "w+")
         my_file.write(data)
@@ -43,3 +45,19 @@ class Channel:
     @property
     def channel_id(self):
         return self.__channel_id
+
+    def __str__(self):
+        """Returning naame and url"""
+        return f"{self.title} {self.url}"
+
+    def __add__(self, other):
+        """Counting suscriber of two channels"""
+        return int(self.subsriber_count) + int(other.subsriber_count)
+
+    def __sub__(self, other):
+        """Substraction of subscribers of two channels"""
+        return int(self.subsriber_count) - int(other.subsriber_count)
+
+    def __ge__(self, other):
+        """Comparing of subscribers of two channels"""
+        return int(self.subsriber_count) >= int(other.subsriber_count)
