@@ -55,9 +55,14 @@ class Channel:
         return int(self.subsriber_count) + int(other.subsriber_count)
 
     def __sub__(self, other):
+        
         """Substraction of subscribers of two channels"""
         return int(self.subsriber_count) - int(other.subsriber_count)
 
     def __ge__(self, other):
         """Comparing of subscribers of two channels"""
         return int(self.subsriber_count) >= int(other.subsriber_count)
+
+    def __gt__(self, other):
+        """Comparing of subscribers of two channels"""
+        return int(self.subsriber_count) > int(other.subsriber_count)
