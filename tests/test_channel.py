@@ -36,3 +36,12 @@ def test_sub(expl1, expl2):
 
 def test_ge(expl1, expl2):
     assert expl1 >= expl2
+
+
+def test_gt(expl1, expl2):
+    assert expl1 > expl2
+
+
+def test_str():
+    vdud = Channel('UCMCgOm8GZkHp8zJ6l7_hIuA')
+    assert str(vdud) == 'вДудь https://www.youtube.com/channel/UCMCgOm8GZkHp8zJ6l7_hIuA'
