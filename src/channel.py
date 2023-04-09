@@ -47,22 +47,21 @@ class Channel:
         return self.__channel_id
 
     def __str__(self):
-        """Returning naame and url"""
+        """Returning name and url"""
         return f"{self.title} {self.url}"
 
     def __add__(self, other):
-        """Counting suscriber of two channels"""
+        """Counting subscriber of two channels"""
         return int(self.subsriber_count) + int(other.subsriber_count)
 
     def __sub__(self, other):
-        
-        """Substraction of subscribers of two channels"""
+        """Subtraction  subscribers of two channels"""
         return int(self.subsriber_count) - int(other.subsriber_count)
 
     def __ge__(self, other):
-        """Comparing of subscribers of two channels"""
+        """Comparing  subscribers of two channels"""
         return int(self.subsriber_count) >= int(other.subsriber_count)
 
     def __gt__(self, other):
-        """Comparing of subscribers of two channels"""
+        """Comparing  subscribers of two channels"""
         return int(self.subsriber_count) > int(other.subsriber_count)
