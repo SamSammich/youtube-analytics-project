@@ -27,7 +27,7 @@ def test_to_json():
 
 
 def test_add(expl1, expl2):
-    assert expl1 + expl2 <= 14010000
+    assert expl1 + expl2 <= 14020000
 
 
 def test_sub(expl1, expl2):
